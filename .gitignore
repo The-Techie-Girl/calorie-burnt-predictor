@@ -1,16 +1,26 @@
 __pycache__/
 *.pyc
 
+.venv/
 venv/
+
 .env
-
-models/*.pkl
-
-data/raw/
-data/processed/
-
-.mlflow/
 
 .ipynb_checkpoints/
 
+models/*.pkl
+
+mlruns/
+
+.pytest_cache/
+
+.idea/
+.vscode/
+
 .DS_Store
+
+*.log
+
+postgres_data/
+
+.env.local

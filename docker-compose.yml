@@ -1,0 +1,47 @@
+
+services:
+
+  postgres:
+    image: postgres:17
+
+    container_name: calorie_postgres
+
+    environment:
+      POSTGRES_DB: calorie_predictor_db
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+
+    ports:
+      - "5432:5432"
+
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+  api:
+
+    build: .
+
+    container_name: calorie_api
+
+    ports:
+      - "8000:8000"
+
+    depends_on:
+      - postgres
+
+  streamlit:
+
+    build:
+      context: .
+      dockerfile: Dockerfile.streamlit
+
+    container_name: calorie_streamlit
+
+    ports:
+      - "8501:8501"
+
+    depends_on:
+      - api
+
+volumes:
+  postgres_data:
