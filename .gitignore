@@ -8,8 +8,6 @@ venv/
 
 .ipynb_checkpoints/
 
-models/*.pkl
-
 mlruns/
 
 .pytest_cache/
