@@ -2,7 +2,7 @@ import streamlit as st
 import requests
 import pandas as pd
 
-API_URL = "http://api:8000"
+API_URL = "https://calorie-burnt-api.onrender.com"
 
 st.set_page_config(
     page_title="Calorie Burnt Predictor",
@@ -122,8 +122,8 @@ if st.button("Load Prediction History"):
             df = pd.DataFrame(data)
 
             st.dataframe(
-                df,
-                use_container_width=True
+                   df,
+                   width="stretch"
             )
 
         else:
